@@ -11,31 +11,27 @@
       "cwd": "${workspaceFolder}"
     },
     {
-      "name": "Python: Current File (with args)",
+      "name": "Ask Vault",
       "type": "debugpy",
       "request": "launch",
-      "program": "${file}",
+      "program": "${workspaceFolder}/main.py",
       "python": "${workspaceFolder}/.venv/bin/python",
-      "args": ["${input:scriptArgs}"],
-      "console": "integratedTerminal",
-      "cwd": "${workspaceFolder}"
-    },
-    {
-      "name": "Python: Debug Tests (pytest)",
-      "type": "debugpy",
-      "request": "launch",
-      "module": "pytest",
-      "python": "${workspaceFolder}/.venv/bin/python",
-      "args": ["-v", "${workspaceFolder}/tests"],
+      "args": ["${input:vaultQuestion}", "--vault", "${input:vaultPath}"],
       "console": "integratedTerminal",
       "cwd": "${workspaceFolder}"
     }
   ],
   "inputs": [
     {
-      "id": "scriptArgs",
+      "id": "vaultQuestion",
       "type": "promptString",
-      "description": "Arguments to pass to the script"
+      "description": "Question to ask about your vault notes"
+    },
+    {
+      "id": "vaultPath",
+      "type": "promptString",
+      "description": "Path to the vault folder",
+      "default": "vault"
     }
   ]
 }
