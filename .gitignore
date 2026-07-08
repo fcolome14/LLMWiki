@@ -1,3 +1,8 @@
+# Obsidian
+.obsidian/app.json
+.obsidian/appearance.json
+.obsidian/core-plugins.jsons
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[codz]
