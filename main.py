@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 VAULT_PATH = Path("vault")
-MODEL = "claude-sonnet-4-6"
+MODEL = "claude-haiku-4-5-20251001"
 
 
 def get_client() -> Anthropic:
@@ -41,23 +41,37 @@ def build_context(notes: dict[str, str]) -> str:
     return "\n\n".join(f"--- {path} ---\n{content}" for path, content in notes.items())
 
 
+SYSTEM_PROMPT = """You are a research assistant for the user's personal Obsidian vault.
+
+Rules:
+- Answer only using the provided notes. If the notes don't cover the question, say so explicitly.
+- Cite which note(s) your answer comes from, by filename.
+- Keep answers concise unless the user asks for more detail.
+- Do not invent connections between notes that aren't actually stated or linked.
+
+After your answer, add a line: "Confidence: [high/medium/low]" based on how directly
+the notes support your answer versus how much you had to infer.
+"""
+
+
 def ask_vault(client: Anthropic, question: str, context: str) -> str:
     try:
         message = client.messages.create(
             model=MODEL,
-            max_tokens=1500,
-            messages=[
+            max_tokens=1000,
+            temperature=1,
+            system=[
                 {
-                    "role": "user",
-                    "content": (
-                        "Here are notes from my Obsidian vault:\n\n"
-                        f"{context}\n\n"
-                        f"Question: {question}\n\n"
-                        "Answer using only the information in these notes. If the notes don't "
-                        "cover it, say so rather than guessing."
-                    ),
-                }
+                    "type": "text",
+                    "text": SYSTEM_PROMPT,
+                },
+                {
+                    "type": "text",
+                    "text": context,
+                    "cache_control": {"type": "ephemeral"},
+                },
             ],
+            messages=[{"role": "user", "content": question}],
         )
     except BadRequestError as e:
         if "credit balance" in str(e).lower():
