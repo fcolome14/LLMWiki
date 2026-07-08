@@ -6,6 +6,7 @@
       {
         "id": "eae7b5814dbecb9f",
         "type": "tabs",
+        "dimension": 48.60606060606061,
         "children": [
           {
             "id": "afe00d8cbcf57512",
@@ -13,28 +14,33 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Bienvenido.md",
+                "file": "00-MOC/LLM Systems MOC.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Bienvenido"
+              "title": "LLM Systems MOC"
             }
           }
         ]
       },
       {
-        "id": "9df623d5a9bed104",
+        "id": "d27601c06b9ec8be",
         "type": "tabs",
+        "dimension": 51.39393939393939,
         "children": [
           {
-            "id": "efadd1d62cf67108",
+            "id": "25b80befa203e1bb",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Vista gráfica"
+              "type": "markdown",
+              "state": {
+                "file": "02-Tools/LangSmith.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "LangSmith"
             }
           }
         ]
@@ -94,7 +100,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 342.5
   },
   "right": {
     "id": "5c7479a342a6c390",
@@ -110,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Bienvenido.md",
+                "file": "02-Tools/LangSmith.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +126,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Enlaces entrantes de Bienvenido"
+              "title": "Enlaces entrantes de LangSmith"
             }
           },
           {
@@ -129,12 +135,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Bienvenido.md",
+                "file": "02-Tools/LangSmith.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Enlaces salientes de Bienvenido"
+              "title": "Enlaces salientes de LangSmith"
             }
           },
           {
@@ -172,13 +178,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Bienvenido.md",
+                "file": "02-Tools/LangSmith.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Esquema de Bienvenido"
+              "title": "Esquema de LangSmith"
             }
           }
         ]
@@ -199,8 +205,22 @@
       "bases:Crear nueva base": false
     }
   },
-  "active": "afe00d8cbcf57512",
+  "active": "25b80befa203e1bb",
   "lastOpenFiles": [
-    "Bienvenido.md"
+    "02-Tools/LangGraph.md",
+    "Bienvenido.md",
+    "00-MOC/LLM Systems MOC.md",
+    "02-Tools/LangSmith.md",
+    "01-Concepts/KYC Automation.md",
+    "02-Tools/PydanticAI.md",
+    "03-Projects/Investor Onboarding System.md",
+    "03-Projects",
+    "02-Tools",
+    "01-Concepts/Tool Calling.md",
+    "01-Concepts/ReAct Pattern.md",
+    "01-Concepts/Agent Orchestration.md",
+    "01-Concepts/Agent Evaluation.md",
+    "01-Concepts",
+    "00-MOC"
   ]
 }
